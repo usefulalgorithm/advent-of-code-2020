@@ -1,0 +1,64 @@
+name:                aoc2020
+version:             0.1.0.0
+github:              "usefulalgorithm/advent-of-code-2020"
+license:             BSD3
+author:              "Tsung-Ju Lii"
+maintainer:          "usefulalgorithm@gmail.com"
+copyright:           "2020 Tsung-Ju Lii"
+
+extra-source-files:
+- README.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/usefulalgorithm/advent-of-code-2020>
+
+dependencies:
+- base >= 4.7 && < 5
+- text
+- MissingH
+- array
+- filepath
+- split
+- hint
+- containers
+- parsec
+- aeson
+- bytestring
+- utf8-string
+- vector
+- unordered-containers
+- scientific
+
+library:
+  source-dirs:
+  - src
+  ghc-options:
+  - -Wall
+
+executables:
+  aoc2020-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - aoc2020
+
+tests:
+  aoc2020-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - aoc2020
